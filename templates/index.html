@@ -4,4 +4,31 @@
  <head>
      <title>Django Project</title>
  </head>
- <h1>First Project in Django...</h1>
+ <body>
+    <h1>First Project in Django...</h1>
+    {% comment %} <h2>{{data}}</h2> {% endcomment %}
+
+    <h1>Number 1 : {{fromdata.num1}}</h1>
+    <h1>Number 2 : {{fromdata.num2}}</h1>
+    <form action="/" method="POST">
+       {% csrf_token %}
+        <input type="number" name="number1">
+        <input type="number" name="number2">
+        <button>ADD</button>
+
+    </form>
+    <h1>Total: {{fromdata.result}}</h1>
+
+    <div>
+        {% for t in data %}
+            <h1>{{t.todo}}</h1>
+        {% endfor %}
+    </div>
+
+
+
+
+
+ </body>
+
+ </html>
